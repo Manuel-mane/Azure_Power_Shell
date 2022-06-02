@@ -2,10 +2,10 @@
 Connect-AzAccount
 
 ### Creating a new DNS zone
-$RSGroup = "1-d672b6ac-playground-sandbox"
+$RSGroup = "Enter resource group"
 New-AzDnsZone -name contoso.x23y -ResourceGroupName $RSGroup
 
-### Creating a DNS Record
+### Creating a DNS Record using a random IP address
 New-AzDnsRecordSet -Name wwww -RecordType A -ZoneName contoso.x23y -ResourceGroupName $RSGroup -Ttl 3600 -DnsRecords `
 (New-AzDnsRecordConfig -Ipv4Address "10.11.11.11")
 
